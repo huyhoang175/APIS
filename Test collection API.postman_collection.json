@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "26a7e375-f751-4ef4-be74-098bd25e1cdb",
+		"name": "Test collection API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35159127"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://random-data-api.com/api/v2/users",
+					"protocol": "https",
+					"host": [
+						"random-data-api",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://dogapi.dog/docs/api-v2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dogapi.dog/api/v2/breeds",
+					"protocol": "https",
+					"host": [
+						"dogapi",
+						"dog"
+					],
+					"path": [
+						"api",
+						"v2",
+						"breeds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://random-data-api.com/api/v2/users",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6813,\r\n    \"uid\": \"9f7a8d3d-86c1-467e-b4e8-0eba9681b010\",\r\n    \"password\": \"vI3V2nhwDx\",\r\n    \"first_name\": \"Rob\",\r\n    \"last_name\": \"Gleichner\",\r\n    \"username\": \"rob.gleichner\",\r\n    \"email\": \"rob.gleichner@email.com\",\r\n    \"avatar\": \"https://robohash.org/nisiipsadeserunt.png?size=300x300&set=set1\",\r\n    \"gender\": \"Polygender\",\r\n    \"phone_number\": \"+670 (560) 763-5834 x475\",\r\n    \"social_insurance_number\": \"123622813\",\r\n    \"date_of_birth\": \"1965-09-27\",\r\n    \"employment\": {\r\n        \"title\": \"Technology Designer\",\r\n        \"key_skill\": \"Networking skills\"\r\n    },\r\n    \"address\": {\r\n        \"city\": \"Gottliebland\",\r\n        \"street_name\": \"Towne Ranch\",\r\n        \"street_address\": \"396 O'Hara Camp\",\r\n        \"zip_code\": \"99080\",\r\n        \"state\": \"Michigan\",\r\n        \"country\": \"United States\",\r\n        \"coordinates\": {\r\n            \"lat\": 63.21756192946137,\r\n            \"lng\": -153.8466164060144\r\n        }\r\n    },\r\n    \"credit_card\": {\r\n        \"cc_number\": \"5353-8389-2518-6939\"\r\n    },\r\n    \"subscription\": {\r\n        \"plan\": \"Free Trial\",\r\n        \"status\": \"Blocked\",\r\n        \"payment_method\": \"Money transfer\",\r\n        \"term\": \"Payment in advance\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://random-data-api.com/api/v2/users",
+					"protocol": "https",
+					"host": [
+						"random-data-api",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
+					"});"
+				]
+			}
+		}
+	]
+}
